@@ -5,19 +5,17 @@ import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
-@Setter
 @Getter
+@Setter
 @Entity
-@Table(name = "user_entity")
-public class User {
+public class Warranty {
 
     @Id
-    private String email;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int warrantyID;
 
     @CreatedDate
     private Date createdDate;
