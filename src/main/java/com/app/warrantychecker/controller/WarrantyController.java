@@ -1,27 +1,31 @@
 package com.app.warrantychecker.controller;
 
+import com.app.warrantychecker.model.Warranty;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(path = "/warranty")
 public class WarrantyController {
 
-    @GetMapping("/warranty/{id}")
+    @GetMapping("/{id}")
     public String findOne( @PathVariable("id") String id) {
         return "FindOne Foo with id=" + id;
     }
 
-    @GetMapping("/warranty")
+    @GetMapping("/")
     public String findAll() {
         return "findAll";
     }
 
-    @PostMapping("/warranty/2")
-    public String create(){
+    @PostMapping("/")
+    @ResponseStatus(HttpStatus.CREATED)
+    public String create(@RequestBody Warranty warranty){
         return "Warranty: Post Mapping";
     }
 
-    @PatchMapping("/warranty/2")
-    public String update(){
+    @PatchMapping("/{id}")
+    public String update( @PathVariable("id") String id, @RequestBody Warranty warranty){
         return "PATCH";
     }
 
