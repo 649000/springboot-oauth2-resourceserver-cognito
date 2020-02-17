@@ -15,7 +15,7 @@ public class Warranty {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int warrantyID;
+    private long warrantyID;
 
     @CreatedDate
     private Date createdDate;
