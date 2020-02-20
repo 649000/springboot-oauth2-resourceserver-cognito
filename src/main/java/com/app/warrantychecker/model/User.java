@@ -5,10 +5,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -27,6 +24,11 @@ public class User {
     @LastModifiedDate
     private Date modifiedDate;
 
-    @OneToMany(mappedBy = "user_entity")
+    // mappedBy refers to the attribute User declared in Warranty.jaba
+    @OneToMany(
+            mappedBy = "user",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<Warranty> warranties;
 }
