@@ -16,9 +16,9 @@ public class WarrantyController {
     WarrantyService warrantyService;
 
     @GetMapping("/{id}")
-    public Warranty findOne( @PathVariable("id") String id) {
+    public Warranty findOne( @PathVariable("id") long id) {
         //Exception Handling
-        return warrantyService.findOne(Long.valueOf(id));
+        return warrantyService.findOne(id);
     }
 
     @GetMapping("/")
@@ -33,8 +33,14 @@ public class WarrantyController {
     }
 
     @PatchMapping("/{id}")
-    public String update( @PathVariable("id") String id, @RequestBody Warranty warranty){
+    public String update( @PathVariable("id") long id, @RequestBody Warranty warranty){
         return "PATCH";
+    }
+
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") long id) {
+        warrantyService.delete(id);
     }
 
 }

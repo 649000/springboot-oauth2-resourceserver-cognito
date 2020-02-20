@@ -26,4 +26,8 @@ public class WarrantyService {
     public Warranty save(Warranty warranty){
         return warrantyRepository.save(warranty);
     }
+
+    public void delete(long id){
+        warrantyRepository.deleteById(id);
+    }
 }
