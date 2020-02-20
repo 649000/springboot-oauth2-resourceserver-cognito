@@ -2,6 +2,7 @@ package com.app.warrantychecker.controller;
 
 import com.app.warrantychecker.model.Warranty;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,7 +21,7 @@ public class WarrantyController {
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
-    public String create(@RequestBody Warranty warranty){
+    public String create(@RequestBody @Validated Warranty warranty){
         return "Warranty: Post Mapping";
     }
 

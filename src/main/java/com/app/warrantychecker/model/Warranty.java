@@ -22,4 +22,19 @@ public class Warranty {
 
     @LastModifiedDate
     private Date modifiedDate;
+
+    // One User have Many Warranties
+//    The @ManyToOne association uses FetchType.LAZY because, otherwise, we’d fall back to EAGER fetching which is bad for performance.
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id")
+    private User user;
+
+    @Column(nullable=false)
+    private Date startDate;
+
+    @Column(nullable=false)
+    private Date endDate;
+
+    @Column(nullable=false)
+    private String productName;
 }
