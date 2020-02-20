@@ -1,6 +1,9 @@
 package com.app.warrantychecker.controller;
 
 import com.app.warrantychecker.model.Warranty;
+import com.app.warrantychecker.repository.WarrantyRepository;
+import com.app.warrantychecker.service.WarrantyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -9,20 +12,24 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "/warranty")
 public class WarrantyController {
 
+    @Autowired
+    WarrantyService warrantyService;
+
     @GetMapping("/{id}")
-    public String findOne( @PathVariable("id") String id) {
-        return "FindOne Foo with id=" + id;
+    public Warranty findOne( @PathVariable("id") String id) {
+        //Exception Handling
+        return warrantyService.findOne(Long.valueOf(id));
     }
 
     @GetMapping("/")
-    public String findAll() {
-        return "findAll";
+    public Iterable<Warranty> findAll() {
+        return warrantyService.findAll();
     }
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
-    public String create(@RequestBody @Validated Warranty warranty){
-        return "Warranty: Post Mapping";
+    public Warranty create(@RequestBody @Validated Warranty warranty){
+        return warrantyService.save(warranty);
     }
 
     @PatchMapping("/{id}")

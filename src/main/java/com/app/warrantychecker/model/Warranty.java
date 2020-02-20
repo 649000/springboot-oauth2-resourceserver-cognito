@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class Warranty {
 
     @Id
@@ -25,15 +27,15 @@ public class Warranty {
 
     // One User have Many Warranties
 //    The @ManyToOne association uses FetchType.LAZY because, otherwise, we’d fall back to EAGER fetching which is bad for performance.
-    @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private User user;
 
-    @Column(nullable=false)
-    private Date startDate;
-
-    @Column(nullable=false)
-    private Date endDate;
-
+//    @Column(nullable=false)
+//    private Date startDate;
+//
+//    @Column(nullable=false)
+//    private Date endDate;
+//
     @Column(nullable=false)
     private String productName;
 }
