@@ -12,6 +12,7 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
     @GetMapping("/")
     public String HelloWorld(){
         return "Hello World";
@@ -20,5 +21,10 @@ public class UserController {
     @PostMapping("/")
     public User create(@RequestBody @Validated User user){
         return userService.create(user);
+    }
+
+    @DeleteMapping("/{email}")
+    public void delete(@PathVariable String email){
+        userService.delete(email);
     }
 }

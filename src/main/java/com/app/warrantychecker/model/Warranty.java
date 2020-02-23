@@ -9,7 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -22,24 +22,38 @@ public class Warranty {
     private long warrantyID;
 
     @CreatedDate
-    private Date createdDate;
+    private LocalDate createdDate;
 
     @LastModifiedDate
-    private Date modifiedDate;
+    private LocalDate modifiedDate;
 
     // One User have Many Warranties
 //    The @ManyToOne association uses FetchType.LAZY because, otherwise, we’d fall back to EAGER fetching which is bad for performance.
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    private User user;
 
-//    @Column(nullable=false)
-//    private Date startDate;
-//
-//    @Column(nullable=false)
-//    private Date endDate;
-//
+    @Column(nullable=false)
+    @NotBlank
+    @NotNull
+    private String productBrand;
+
     @Column(nullable=false)
     @NotNull
     @NotBlank
     private String productName;
+
+    private String productSerialNumber;
+
+    @Column(nullable=false)
+    @NotNull
+    private LocalDate dateOfPurchase;
+
+    @Column(nullable=false)
+    @NotNull
+    private LocalDate endDate;
+
+    private String placeOfPurchase;
+
+    private String proofOfPurchase;
+
 }
