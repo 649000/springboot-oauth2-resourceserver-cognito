@@ -14,7 +14,7 @@ public class UserController {
     UserService userService;
 
     @GetMapping("/")
-    public String HelloWorld(){
+    public String findAll(){
         return "Hello World";
     }
 
