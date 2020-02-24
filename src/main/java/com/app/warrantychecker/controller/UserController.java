@@ -1,6 +1,7 @@
 package com.app.warrantychecker.controller;
 
 import com.app.warrantychecker.model.User;
+import com.app.warrantychecker.model.Warranty;
 import com.app.warrantychecker.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -14,8 +15,8 @@ public class UserController {
     UserService userService;
 
     @GetMapping("/")
-    public String findAll(){
-        return "Hello World";
+    public Iterable<User> findAll(){
+        return userService.findAll();
     }
 
     @PostMapping("/")
