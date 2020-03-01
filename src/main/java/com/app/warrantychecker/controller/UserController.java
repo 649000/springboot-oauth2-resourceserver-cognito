@@ -1,9 +1,9 @@
 package com.app.warrantychecker.controller;
 
 import com.app.warrantychecker.model.User;
-import com.app.warrantychecker.model.Warranty;
 import com.app.warrantychecker.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,18 +14,32 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/")
-    public Iterable<User> findAll(){
+    @GetMapping("/{email}")
+    public User findOne(@PathVariable String email) throws Exception {
+        if (userService.findOne(email).isPresent()) {
+            return userService.findOne(email).get();
+        } else {
+            throw new Exception("xx");
+        }
+    }
+
+    @GetMapping
+    public Iterable<User> findAll() {
         return userService.findAll();
     }
 
-    @PostMapping("/")
-    public User create(@RequestBody @Validated User user){
-        return userService.create(user);
+//    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping
+    public User create(@RequestBody @Validated User user) {
+        if (userService.findOne(user.getEmail()).isPresent()) {
+            return userService.findOne(user.getEmail()).get();
+        } else {
+            return userService.create(user);
+        }
     }
 
     @DeleteMapping("/{email}")
-    public void delete(@PathVariable String email){
+    public void delete(@PathVariable String email) {
         userService.delete(email);
     }
 }

@@ -26,13 +26,13 @@ public class WarrantyController {
         return warrantyService.findOne(id);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public Iterable<Warranty> findAll() {
         logger.info("WarrantyController::findAll");
         return warrantyService.findAll();
     }
 
-    @PostMapping("/")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Warranty create(@RequestBody @Validated Warranty warranty){
         logger.info("WarrantyController::create");

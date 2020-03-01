@@ -1,5 +1,8 @@
 package com.app.warrantychecker.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -15,6 +18,9 @@ import java.time.LocalDate;
 @Setter
 @Entity
 @EntityListeners(AuditingEntityListener.class)
+//@JsonIdentityInfo(
+//        generator = ObjectIdGenerators.PropertyGenerator.class,
+//        property = "id")
 public class Warranty {
 
     @Id
@@ -26,11 +32,6 @@ public class Warranty {
 
     @LastModifiedDate
     private LocalDate modifiedDate;
-
-    // One User have Many Warranties
-//    The @ManyToOne association uses FetchType.LAZY because, otherwise, we’d fall back to EAGER fetching which is bad for performance.
-    @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
 
     @Column(nullable=false)
     @NotBlank
@@ -54,6 +55,9 @@ public class Warranty {
 
     private String placeOfPurchase;
 
-    private String proofOfPurchase;
+    // One User have Many Warranties
+//    The @ManyToOne association uses FetchType.LAZY because, otherwise, we’d fall back to EAGER fetching which is bad for performance.
+    @ManyToOne
+    private User user;
 
 }
