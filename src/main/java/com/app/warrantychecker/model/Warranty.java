@@ -1,5 +1,6 @@
 package com.app.warrantychecker.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -58,6 +59,7 @@ public class Warranty {
     // One User have Many Warranties
 //    The @ManyToOne association uses FetchType.LAZY because, otherwise, we’d fall back to EAGER fetching which is bad for performance.
     @ManyToOne
+    @JsonBackReference
     private User user;
 
 }
