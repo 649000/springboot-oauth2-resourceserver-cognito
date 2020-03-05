@@ -22,9 +22,6 @@ import java.util.List;
 @Entity
 @Table(name = "user_entity")
 @EntityListeners(AuditingEntityListener.class)
-//@JsonIdentityInfo(
-//        generator = ObjectIdGenerators.PropertyGenerator.class,
-//        property = "id")
 public class User {
 
     @Id
@@ -41,11 +38,12 @@ public class User {
     private Date modifiedDate;
 
     // mappedBy refers to the attribute User declared in Warranty.jaba
-    @OneToMany(
-            mappedBy = "user",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    @JsonManagedReference
-    private List<Warranty> warranties;
+//    @OneToMany(
+//            mappedBy = "user",
+//            cascade = CascadeType.ALL,
+//            orphanRemoval = true,
+//            fetch = FetchType.LAZY
+//    )
+////    @JsonManagedReference
+//    private List<Warranty> warranties;
 }

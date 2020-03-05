@@ -19,9 +19,6 @@ import java.time.LocalDate;
 @Setter
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-//@JsonIdentityInfo(
-//        generator = ObjectIdGenerators.PropertyGenerator.class,
-//        property = "id")
 public class Warranty {
 
     @Id
@@ -59,7 +56,11 @@ public class Warranty {
     // One User have Many Warranties
 //    The @ManyToOne association uses FetchType.LAZY because, otherwise, we’d fall back to EAGER fetching which is bad for performance.
     @ManyToOne
-    @JsonBackReference
+//    @JsonBackReference
     private User user;
+
+    //Either just stick to non bidirectional, must use eager
+    // Use @JsonManagedReference / @JsonBackReference
+    //If bidirectional is a must, create some DTO to stop recursion
 
 }
