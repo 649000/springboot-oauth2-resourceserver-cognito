@@ -1,9 +1,5 @@
 package com.app.warrantychecker.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -31,23 +27,23 @@ public class Warranty {
     @LastModifiedDate
     private LocalDate modifiedDate;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     @NotBlank
     @NotNull
     private String productBrand;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     @NotNull
     @NotBlank
     private String productName;
 
     private String productSerialNumber;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     @NotNull
     private LocalDate dateOfPurchase;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     @NotNull
     private LocalDate endDate;
 
@@ -56,11 +52,6 @@ public class Warranty {
     // One User have Many Warranties
 //    The @ManyToOne association uses FetchType.LAZY because, otherwise, we’d fall back to EAGER fetching which is bad for performance.
     @ManyToOne
-//    @JsonBackReference
     private User user;
-
-    //Either just stick to non bidirectional, must use eager
-    // Use @JsonManagedReference / @JsonBackReference
-    //If bidirectional is a must, create some DTO to stop recursion
 
 }
