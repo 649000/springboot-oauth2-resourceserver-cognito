@@ -30,13 +30,13 @@ public class WarrantyService {
 
     public Warranty save(Warranty warranty){
 
-//        Optional<User> user = userService.findOne(warranty.getUser().getEmail());
-//
-//        if (!user.isPresent()) {
-//            User newUser = new User();
-//            newUser.setEmail(warranty.getPlaceOfPurchase());
-//            userService.create(newUser);
-//        }
+        Optional<User> user = userService.findOne(warranty.getUser().getEmail());
+
+        if (!user.isPresent()) {
+            User newUser = new User();
+            newUser.setEmail(warranty.getUser().getEmail());
+            userService.create(newUser);
+        }
         return warrantyRepository.save(warranty);
 
     }
