@@ -1,7 +1,9 @@
 package com.app.warrantychecker.controller;
 
 import com.app.warrantychecker.model.User;
+import com.app.warrantychecker.model.Warranty;
 import com.app.warrantychecker.service.UserService;
+import com.app.warrantychecker.service.WarrantyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
@@ -13,6 +15,9 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    WarrantyService warrantyService;
 
     @GetMapping("/{email}")
     public User findOne(@PathVariable String email) throws Exception {
@@ -42,4 +47,12 @@ public class UserController {
     public void delete(@PathVariable String email) {
         userService.delete(email);
     }
+
+    @GetMapping("/{email}/warranty")
+    public Iterable<Warranty> findAllWarranty(@PathVariable String email) {
+        User user = new User();
+        user.setEmail(email);
+        return warrantyService.findByUser(user);
+    }
+
 }
