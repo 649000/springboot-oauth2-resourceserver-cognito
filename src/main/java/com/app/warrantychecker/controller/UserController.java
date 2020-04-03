@@ -9,6 +9,8 @@ import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityNotFoundException;
+
 @RestController
 @RequestMapping(path = "/user")
 public class UserController {
@@ -24,7 +26,7 @@ public class UserController {
         if (userService.findOne(email).isPresent()) {
             return userService.findOne(email).get();
         } else {
-            throw new Exception("xx");
+            throw new EntityNotFoundException("The User does not exist.");
         }
     }
 
@@ -33,7 +35,6 @@ public class UserController {
         return userService.findAll();
     }
 
-//    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping
     public User create(@RequestBody @Validated User user) {
         if (userService.findOne(user.getEmail()).isPresent()) {

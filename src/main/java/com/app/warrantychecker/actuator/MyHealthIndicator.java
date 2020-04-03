@@ -12,6 +12,7 @@ public class MyHealthIndicator implements HealthIndicator {
     // Docs: https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#writing-custom-healthindicators
     // The identifier is the name of the bean without the HealthIndicator suffix.
     // In this example, the health information is available in an entry named 'my'.
+    // http://localhost:8080/actuator/health
 
     @Override
     public Health health() {

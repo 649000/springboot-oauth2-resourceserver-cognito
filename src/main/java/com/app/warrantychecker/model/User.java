@@ -38,7 +38,9 @@ public class User {
     @LastModifiedDate
     private Date modifiedDate;
 
-    // mappedBy refers to the attribute User declared in Warranty.jaba
+    // mappedBy refers to the attribute User declared in Warranty.java
+    // Dual sided relationship is a nightmare
+    // It will create a circular reference when printing out the JSON.
 //    @OneToMany(
 //            mappedBy = "user",
 //            cascade = CascadeType.ALL,

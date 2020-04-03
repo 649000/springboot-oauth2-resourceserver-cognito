@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface WarrantyRepository extends CrudRepository<Warranty, Long> {
+
     //Note that findByUser(String Email) does not work
     List<Warranty> findByUser(User user);
 }

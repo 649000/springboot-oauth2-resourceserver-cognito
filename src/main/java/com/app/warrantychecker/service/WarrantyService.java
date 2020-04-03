@@ -6,7 +6,6 @@ import com.app.warrantychecker.repository.WarrantyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,10 +18,8 @@ public class WarrantyService {
     @Autowired
     UserService userService;
 
-    public Warranty findOne(long id){
-
-        return warrantyRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("xx"));
+    public Optional<Warranty> findOne(long id){
+        return warrantyRepository.findById(id);
     }
 
     public Iterable<Warranty> findAll(){
@@ -39,7 +36,6 @@ public class WarrantyService {
             userService.create(newUser);
         }
         return warrantyRepository.save(warranty);
-
     }
 
     public void delete(long id){
