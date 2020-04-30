@@ -1,5 +1,10 @@
 package com.app.warrantychecker.model;
 
+import io.crnk.core.resource.annotations.JsonApiField;
+import io.crnk.core.resource.annotations.JsonApiId;
+import io.crnk.core.resource.annotations.JsonApiMetaInformation;
+import io.crnk.core.resource.annotations.JsonApiResource;
+import io.crnk.core.resource.meta.MetaInformation;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -23,6 +28,7 @@ import java.util.Date;
 @Entity
 @Table(name = "user_entity")
 @EntityListeners(AuditingEntityListener.class)
+@JsonApiResource(type = "user")
 public class User {
 
     @Id
@@ -30,12 +36,15 @@ public class User {
     @NotNull
     @NotEmpty
     @Email
+    @JsonApiId
     private String email;
 
     @CreatedDate
+    @JsonApiField
     private Date createdDate;
 
     @LastModifiedDate
+    @JsonApiField
     private Date modifiedDate;
 
     // mappedBy refers to the attribute User declared in Warranty.java
