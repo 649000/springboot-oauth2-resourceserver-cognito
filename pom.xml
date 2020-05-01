@@ -79,12 +79,12 @@
             <version>1.4.199</version>
         </dependency>
 
-
-        <dependency>
-            <groupId>io.crnk</groupId>
-            <artifactId>crnk-setup-spring-boot2</artifactId>
-            <version>3.1.20191113192440</version>
-        </dependency>
+        <!--Does not work on Heroku-->
+<!--        <dependency>-->
+<!--            <groupId>io.crnk</groupId>-->
+<!--            <artifactId>crnk-setup-spring-boot2</artifactId>-->
+<!--            <version>3.1.20191113192440</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 
