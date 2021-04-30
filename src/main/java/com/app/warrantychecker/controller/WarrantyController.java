@@ -23,6 +23,7 @@ public class WarrantyController {
     @Autowired
     WarrantyService warrantyService;
 
+
     @GetMapping("/{id}")
     public Warranty findOne( @PathVariable("id") long id) {
         logger.info("WarrantyController::findOne");
