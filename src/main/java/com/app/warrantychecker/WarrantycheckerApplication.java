@@ -10,6 +10,7 @@ public class WarrantycheckerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(WarrantycheckerApplication.class, args);
+
     }
 
 }
