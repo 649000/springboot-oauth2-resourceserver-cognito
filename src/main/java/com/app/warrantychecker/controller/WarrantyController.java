@@ -30,6 +30,7 @@ public class WarrantyController {
         //Exception Handling
         Optional<Warranty> warranty = warrantyService.findOne(id);
         if (warranty.isPresent()){
+
             return warranty.get();
         } else {
             throw new EntityNotFoundException();
