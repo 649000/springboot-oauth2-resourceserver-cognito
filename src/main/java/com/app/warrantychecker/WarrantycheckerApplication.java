@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 public class WarrantycheckerApplication {
 
     public static void main(String[] args) {
+        //Comment
         SpringApplication.run(WarrantycheckerApplication.class, args);
 
     }
