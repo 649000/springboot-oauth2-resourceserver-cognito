@@ -7,8 +7,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.NotBlank;
+//import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Getter
@@ -28,23 +28,17 @@ public class Warranty {
     private LocalDate modifiedDate;
 
     @Column(nullable = false)
-    @NotBlank
-    @NotNull
     private String productBrand;
 
     @Column(nullable = false)
-    @NotNull
-    @NotBlank
     private String productName;
 
     private String productSerialNumber;
 
     @Column(nullable = false)
-    @NotNull
     private LocalDate dateOfPurchase;
 
     @Column(nullable = false)
-    @NotNull
     private LocalDate endDate;
 
     private String placeOfPurchase;
