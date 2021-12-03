@@ -38,14 +38,26 @@ public class Warranty {
     @Column(nullable = false)
     private LocalDate dateOfPurchase;
 
-    @Column(nullable = false)
-    private LocalDate endDate;
+    // @Column(nullable = false)
+    // private LocalDate endDate;
+
+    //Duration in years
+    private double duration;
+
+    //duration in months
+    private double monthDuration;
+
+    
 
     private String placeOfPurchase;
 
+    private String additionalInfo;
+
+    private String imageReceipt;
+
     // One User have Many Warranties
 //    The @ManyToOne association uses FetchType.LAZY because, otherwise, we’d fall back to EAGER fetching which is bad for performance.
-    @ManyToOne
-    private User user;
+    // @ManyToOne
+    // private User user;
 
 }
