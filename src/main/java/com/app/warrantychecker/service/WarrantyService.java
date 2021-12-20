@@ -6,12 +6,10 @@ import com.app.warrantychecker.repository.WarrantyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional
 public class WarrantyService {
 
     @Autowired
@@ -29,15 +27,7 @@ public class WarrantyService {
     }
 
     public Warranty save(Warranty warranty){
-
-        Optional<User> user = userService.findOne(warranty.getUser().getEmail());
-
-        if (!user.isPresent()) {
-            User newUser = new User();
-            newUser.setEmail(warranty.getUser().getEmail());
-            userService.create(newUser);
-        }
-        return warrantyRepository.save(warranty);
+        return null;
     }
 
     public void delete(long id){

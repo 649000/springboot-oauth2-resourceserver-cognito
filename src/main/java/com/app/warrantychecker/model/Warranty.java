@@ -4,21 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import javax.persistence.*;
-//import javax.validation.constraints.NotBlank;
-//import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Getter
 @Setter
-@Entity
-@EntityListeners(AuditingEntityListener.class)
 public class Warranty {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private long warrantyID;
 
     @CreatedDate
@@ -27,15 +19,15 @@ public class Warranty {
     @LastModifiedDate
     private LocalDate modifiedDate;
 
-    @Column(nullable = false)
+
     private String productBrand;
 
-    @Column(nullable = false)
+
     private String productName;
 
     private String productSerialNumber;
 
-    @Column(nullable = false)
+
     private LocalDate dateOfPurchase;
 
     // @Column(nullable = false)
