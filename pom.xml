@@ -56,34 +56,26 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.firebase</groupId>
-            <artifactId>firebase-admin</artifactId>
-            <version>8.1.0</version>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
 <!--        <dependency>-->
-<!--            <groupId>org.springframework.data</groupId>-->
-<!--            <artifactId>spring-data-rest-hal-browser</artifactId>-->
+<!--            <groupId>com.amazonaws</groupId>-->
+<!--            <artifactId>aws-java-sdk-dynamodb</artifactId>-->
+<!--            <version>1.11.64</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.github.derjust</groupId>-->
+<!--            <artifactId>spring-data-dynamodb</artifactId>-->
+<!--            <version>5.1.0</version>-->
 <!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-            <version>1.4.199</version>
-        </dependency>
-
+<!--        <dependency>-->
+<!--            <groupId>com.amazonaws</groupId>-->
+<!--            <artifactId>aws-java-sdk-cognitoidp</artifactId>-->
+<!--            <version>1.12.126</version>-->
+<!--        </dependency>-->
+<!--        -->
         <!--Does not work on Heroku-->
 <!--        <dependency>-->
 <!--            <groupId>io.crnk</groupId>-->
