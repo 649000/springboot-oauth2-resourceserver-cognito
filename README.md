@@ -9,3 +9,13 @@ Proof of concept for Spring Boot REST API as an OAuth2 Resource Server using AWS
 5. Maven
 
 
+## Project Status
+
+|Feature|Status  |
+|--|--|
+|User authentication via AWS Cognito|Completed  |
+|Display results in JSON API| Completed
+
+## Reflection
+
+This project is similar to the Subtracker project I worked on. In this project, I am using AWS Cognito which is AWS' offering of Identity as a Service. The aim was to familiarise with AWS services which aid in my learning for my AWS certification.
