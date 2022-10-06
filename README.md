@@ -18,4 +18,4 @@ Proof of concept for Spring Boot REST API as an OAuth2 Resource Server using AWS
 
 ## Reflection
 
-This project is similar to the Subtracker project I worked on. In this project, I am using AWS Cognito which is AWS' offering of Identity as a Service. The aim was to familiarise with AWS services which aid in my learning for my AWS certification.
+This project is similar to the [Subtracker project](https://github.com/649000/subtracker-rest-api) I worked on. In this project, I am using AWS Cognito which is AWS' offering of Identity as a Service. The aim was to familiarise with AWS services which aid in my learning for my AWS certification.
