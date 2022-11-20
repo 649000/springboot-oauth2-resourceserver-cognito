@@ -1,6 +1,6 @@
-package com.app.warrantychecker.controller;
+package com.app.warrantytracker.controller;
 
-import com.app.warrantychecker.model.Foo;
+import com.app.warrantytracker.model.Foo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -14,7 +14,7 @@ import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
 
 @RestController
-@RequestMapping(value = "/foos")
+@RequestMapping(value = "/api/foos")
 @Slf4j
 public class FooController {
 

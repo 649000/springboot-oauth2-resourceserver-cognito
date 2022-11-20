@@ -1,14 +1,14 @@
-package com.app.warrantychecker;
+package com.app.warrantytracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WarrantycheckerApplication {
+public class WarrantyTrackerApp {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(WarrantycheckerApplication.class, args);
+        SpringApplication.run(WarrantyTrackerApp.class, args);
 
     }
 

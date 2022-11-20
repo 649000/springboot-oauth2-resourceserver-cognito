@@ -1,10 +1,10 @@
-package com.app.warrantychecker;
+package com.app.warrantytracker;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WarrantycheckerApplicationTests {
+class WarrantyTrackerAppTests {
 
     @Test
     void contextLoads() {
