@@ -1,4 +1,4 @@
-package com.app.warrantytracker.model;
+package com.N649000.warrantytracker.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.app.warrantytracker.config;
+package com.N649000.warrantytracker.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;

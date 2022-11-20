@@ -1,6 +1,6 @@
-package com.app.warrantytracker.controller;
+package com.N649000.warrantytracker.controller;
 
-import com.app.warrantytracker.model.Foo;
+import com.N649000.warrantytracker.model.Foo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

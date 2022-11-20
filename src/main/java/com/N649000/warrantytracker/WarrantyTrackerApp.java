@@ -1,4 +1,4 @@
-package com.app.warrantytracker;
+package com.N649000.warrantytracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

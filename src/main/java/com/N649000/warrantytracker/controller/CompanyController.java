@@ -1,7 +1,7 @@
-package com.app.warrantytracker.controller;
+package com.N649000.warrantytracker.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ProductController {
+public class CompanyController {
 }

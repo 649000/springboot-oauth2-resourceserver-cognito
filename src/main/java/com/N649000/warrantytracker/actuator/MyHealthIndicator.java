@@ -1,4 +1,4 @@
-package com.app.warrantytracker.actuator;
+package com.N649000.warrantytracker.actuator;
 
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
