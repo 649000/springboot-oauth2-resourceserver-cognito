@@ -6,16 +6,21 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.6.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.app</groupId>
+
+    <groupId>com.N649000</groupId>
     <artifactId>warrantychecker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>warrantychecker</name>
+    <name>Warranty Tracker</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
+        <lombok.version>1.18.24</lombok.version>
+        <dynamodb.sdk.version>1.12.341</dynamodb.sdk.version>
+        <spring.dynamodb.version>5.1.0</spring.dynamodb.version>
+        <spring.openapi.version>1.6.12</spring.openapi.version>
+        <mapstruct.version>1.5.3.Final</mapstruct.version>
     </properties>
 
     <dependencies>
@@ -41,6 +46,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -68,6 +74,24 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.12.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-dynamodb</artifactId>
+            <version>${dynamodb.sdk.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.derjust</groupId>
+            <artifactId>spring-data-dynamodb</artifactId>
+            <version>${spring.dynamodb.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${spring.openapi.version}</version>
         </dependency>
 
 <!--        <dependency>-->
