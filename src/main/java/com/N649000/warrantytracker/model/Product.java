@@ -25,4 +25,7 @@ public class Product {
 
     @DynamoDBAttribute
     private String warrantyExpiryDate;
+
+    @DynamoDBAttribute
+    private String companyId;
 }
