@@ -6,9 +6,9 @@ import com.N649000.warrantytracker.model.Mapper;
 import com.N649000.warrantytracker.model.Product;
 import com.N649000.warrantytracker.repository.CompanyRepository;
 import com.N649000.warrantytracker.repository.ProductRepository;
+import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -28,7 +28,7 @@ public class ProductService {
         this.mapper = mapper;
     }
 
-    public Product createProduct (Product product){
+    public Product createProduct (@NonNull Product product){
         return productRepository.save(product);
     }
 
@@ -49,7 +49,7 @@ public class ProductService {
     }
 
 
-    public Product updateProduct(@NonNull final String productId, @NonNull final Product request){
+    public Product  updateProduct(@NonNull final String productId, @NonNull final Product request){
         Optional<Product> optionalProduct = productRepository.findById(productId);
         if(optionalProduct.isEmpty()) {
             throw new EntityNotFoundException("Product Not Found");

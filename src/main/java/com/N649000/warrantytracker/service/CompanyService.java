@@ -4,9 +4,9 @@ import com.N649000.warrantytracker.exception.EntityNotFoundException;
 import com.N649000.warrantytracker.model.Company;
 import com.N649000.warrantytracker.model.Mapper;
 import com.N649000.warrantytracker.repository.CompanyRepository;
+import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -24,7 +24,7 @@ public class CompanyService {
         this.mapper = mapper;
     }
 
-    public Company createCompany (Company company){
+    public Company createCompany (@NonNull Company company){
         return companyRepository.save(company);
     }
 
