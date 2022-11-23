@@ -36,6 +36,11 @@ To run the service, navigate to the root of the project and execute the command
 ```
 mvn spring-boot:run
 ```
+## Endpoints
+|          | localhost                                   | Railway                                                     |
+|----------|---------------------------------------------|-------------------------------------------------------------|
+| Open API | http://localhost:8080/swagger-ui/index.html | https://warranty-tracker-api.up.railway.app/swagger-ui/index.html |
+| Actuator | http://localhost:8080/actuator              | https://warranty-tracker-api.up.railway.app/actuator              |
 
 ## Reflection
 
