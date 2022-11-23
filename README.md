@@ -1,4 +1,4 @@
-# Spring Boot OAuth 2 Resource Server with AWS Cognito
+# Warranty Tracker API service
 Proof of concept for Spring Boot REST API as an OAuth2 Resource Server using AWS Cognito
 
 #### Technologies
