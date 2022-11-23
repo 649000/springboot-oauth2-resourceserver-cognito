@@ -2,7 +2,6 @@ package com.N649000.warrantytracker.controller;
 
 import com.N649000.warrantytracker.model.Company;
 import com.N649000.warrantytracker.service.CompanyService;
-import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class CompanyController {
 
-    //TODO: Adding validation
-    //https://stackoverflow.com/questions/67454378/spring-boot-validation-with-spring-boot-starter-validation-is-not-working-for-sp
     private final CompanyService companyService;
 
     public CompanyController(CompanyService companyService) {
@@ -32,11 +29,8 @@ public class CompanyController {
     }
 
     @GetMapping("/{companyId}")
-    public Company getCompany(@PathVariable @NonNull String companyId) {
+    public Company getCompany(@PathVariable String companyId) {
         log.debug("Company ID: {}", companyId);
-        if(companyId==null){
-            log.info("YUP ITS NULL");
-        }
         return companyService.getCompany(companyId);
     }
 

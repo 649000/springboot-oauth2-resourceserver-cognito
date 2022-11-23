@@ -5,7 +5,6 @@ import com.N649000.warrantytracker.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -47,7 +46,7 @@ public class ProductController {
 
     @DeleteMapping("/{productId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteBook (@PathVariable @NonNull String productId) {
+    public void deleteBook (@PathVariable String productId) {
         log.debug("Product ID: {}", productId);
         productService.deleteProduct(productId);
     }
