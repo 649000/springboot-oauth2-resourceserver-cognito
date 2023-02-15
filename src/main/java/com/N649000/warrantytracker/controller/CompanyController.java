@@ -37,7 +37,7 @@ public class CompanyController {
     @PatchMapping("/{companyId}")
     public Company updateCompany (@PathVariable("companyId") String companyId, @RequestBody Company request) {
         log.debug("Company ID: {}", companyId);
-        log.debug("Company Object: {}", request.toString());
+        log.debug("Request Object: {}", request.toString());
         return companyService.updateCompany(companyId, request);
     }
 
