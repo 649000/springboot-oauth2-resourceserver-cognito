@@ -68,8 +68,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
         </dependency>
-
-
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -101,21 +99,21 @@
         </dependency>
 
         <!--Does not work on Heroku-->
-<!--        <dependency>-->
-<!--            <groupId>io.crnk</groupId>-->
-<!--            <artifactId>crnk-setup-spring-boot2</artifactId>-->
-<!--            <version>3.1.20191113192440</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.crnk</groupId>-->
+        <!--            <artifactId>crnk-setup-spring-boot2</artifactId>-->
+        <!--            <version>3.1.20191113192440</version>-->
+        <!--        </dependency>-->
 
 
     </dependencies>
 
     <build>
         <plugins>
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            </plugin>-->
+            <!--            <plugin>-->
+            <!--                <groupId>org.springframework.boot</groupId>-->
+            <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--            </plugin>-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -130,7 +128,13 @@
                             <artifactId>mapstruct-processor</artifactId>
                             <version>${mapstruct.version}</version>
                         </path>
-                        <!--                        Lombok annotation processor is required here-->
+                        <!-- This is needed when using Lombok 1.8.16 and above. ORDER MATTERS -->
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>0.2.0</version>
+                        </path>
+                        <!-- Lombok's annotation processor is required here-->
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
