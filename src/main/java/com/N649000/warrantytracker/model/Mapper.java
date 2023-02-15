@@ -1,14 +1,14 @@
 package com.N649000.warrantytracker.model;
 
-import org.mapstruct.BeanMapping;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
-import org.mapstruct.NullValuePropertyMappingStrategy;
 
 @org.mapstruct.Mapper(componentModel = "spring")
 public interface Mapper {
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+
+    @Mapping(target="id", ignore=true)
     Company updateCompany(Company request, @MappingTarget Company company);
 
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(target="id", ignore=true)
     Product updateProduct(Product request, @MappingTarget Product product);
 }
