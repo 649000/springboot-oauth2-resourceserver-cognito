@@ -16,6 +16,7 @@ public class SecurityConfig {
                 .securityMatcher("/api/**")
                 .authorizeHttpRequests(authorize -> authorize
                                 .requestMatchers("/api/**").authenticated()
+                                .requestMatchers("/actuator/**").permitAll()
                                 .requestMatchers("/**").permitAll()
                         // All request will be authenticated
                         // .anyRequest().authenticated()
