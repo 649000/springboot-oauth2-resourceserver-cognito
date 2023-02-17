@@ -44,7 +44,7 @@ mvn spring-boot:run
 
 Note that endpoints are secured by Spring Security and require a valid JWT access token to be called. Only the `/actuator` and `/swagger-ui/**` endpoints are not secured. 
 
-Service on Railway may be down due to limited execution hours provided.
+Service on Railway may be down due to limited uptime hours provided.
 
 ## Reflection
 
