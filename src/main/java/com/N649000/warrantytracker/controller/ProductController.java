@@ -5,6 +5,8 @@ import com.N649000.warrantytracker.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,8 +23,9 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Product createProduct (@RequestBody Product request) {
-        log.debug("Product Object: {}", request.toString());
+    public Product createProduct (@RequestBody Product request, @AuthenticationPrincipal Jwt jwt) {
+        request.setUserId(jwt.getSubject());
+        log.debug("Request Object: {}", request.toString());
         return productService.createProduct(request);
     }
 
@@ -38,9 +41,9 @@ public class ProductController {
     }
 
     @PatchMapping("/{productId}")
-    public Product updateBook (@PathVariable("productId") String productId, @RequestBody Product request) {
+    public Product updateProduct (@PathVariable("productId") String productId, @RequestBody Product request) {
         log.debug("Product ID: {}", productId);
-        log.debug("Product Object: {}", request.toString());
+        log.debug("Request Object: {}", request.toString());
         return productService.updateProduct(productId, request);
     }
 
