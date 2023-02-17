@@ -6,6 +6,10 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import lombok.Data;
 
+import java.math.BigDecimal;
+import java.util.Currency;
+import java.util.Date;
+
 @Data
 @DynamoDBTable(tableName = "product")
 public class Product {
@@ -21,11 +25,20 @@ public class Product {
     private String serialNumber;
 
     @DynamoDBAttribute
-    private String purchasedDate;
+    private Date purchasedDate;
 
     @DynamoDBAttribute
-    private String warrantyExpiryDate;
+    private Date warrantyExpiryDate;
 
     @DynamoDBAttribute
     private String companyId;
+
+    @DynamoDBAttribute
+    private BigDecimal purchasedAmount;
+
+    @DynamoDBAttribute
+    private Currency purchasedCurrency;
+
+    @DynamoDBAttribute
+    private String notes;
 }
