@@ -42,6 +42,8 @@ mvn spring-boot:run
 | Open API | http://localhost:8080/swagger-ui/index.html | https://warranty-tracker-api.up.railway.app/swagger-ui/index.html |
 | Actuator | http://localhost:8080/actuator              | https://warranty-tracker-api.up.railway.app/actuator              |
 
+Note that endpoints are secured by Spring Security and require a valid JWT access token to be called. Only the `/actuator` and `/swagger-ui/**` endpoints are not secured. 
+
 ## Reflection
 
 This project is similar to the [Subtracker project](https://github.com/649000/subtracker-rest-api) I worked on. In this project, I am using AWS Cognito which is AWS' offering of Identity as a Service. The aim was to familiarise with AWS services which aid in my learning for my AWS certification.
