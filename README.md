@@ -44,6 +44,8 @@ mvn spring-boot:run
 
 Note that endpoints are secured by Spring Security and require a valid JWT access token to be called. Only the `/actuator` and `/swagger-ui/**` endpoints are not secured. 
 
+Service on Railway may be down due to limited execution hours provided.
+
 ## Reflection
 
 This project is similar to the [Subtracker project](https://github.com/649000/subtracker-rest-api) I worked on. In this project, I am using AWS Cognito which is AWS' offering of Identity as a Service. The aim was to familiarise with AWS services which aid in my learning for my AWS certification.
