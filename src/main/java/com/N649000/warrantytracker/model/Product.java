@@ -19,6 +19,9 @@ public class Product {
     private String id;
 
     @DynamoDBAttribute
+    private String userId;
+
+    @DynamoDBAttribute
     private String name;
 
     @DynamoDBAttribute
