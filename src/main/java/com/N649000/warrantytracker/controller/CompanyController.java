@@ -3,6 +3,7 @@ package com.N649000.warrantytracker.controller;
 import com.N649000.warrantytracker.model.Company;
 import com.N649000.warrantytracker.service.CompanyService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class CompanyController {
 
     private final CompanyService companyService;
-
+    @Autowired
     public CompanyController(CompanyService companyService) {
         this.companyService = companyService;
     }
