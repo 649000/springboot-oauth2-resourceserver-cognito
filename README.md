@@ -25,7 +25,7 @@ The API service allows users to:
   
 
 
-## Running the project
+## Installation and Setup Instructions
 AWS Access and Secret keys are required and must be set as an environment variable to run this app
 
 Example on setting environment variable on macOS:
