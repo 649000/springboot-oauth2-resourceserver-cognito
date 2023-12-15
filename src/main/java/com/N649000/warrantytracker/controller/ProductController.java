@@ -49,7 +49,7 @@ public class ProductController {
 
     @DeleteMapping("/{productId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteBook (@PathVariable String productId) {
+    public void deleteProduct (@PathVariable String productId) {
         log.debug("Product ID: {}", productId);
         productService.deleteProduct(productId);
     }
