@@ -1,26 +1,29 @@
 # Warranty Tracker API service
-## Overview
-A Spring Boot RESTful API service that helps to track the warranties of your products.
 
-The objective of this project are:
-1. Familiarize with the Spring Boot framework
-2. Familiarise with building an OAuth2 resource server
-3. Explore Identity as a Service products such as AWS Cognito
+## Overview
+The Warranty Tracker API service, built on Spring Boot, is designed to streamline warranty management for your products, providing a reliable and efficient platform for tracking warranty details effortlessly.
+
+## Objectives
+* Familiarization with Spring Boot: Gain proficiency in utilizing the Spring Boot framework for building robust and scalable APIs.
+* Building OAuth2 Resource Server: Learn the implementation of OAuth2 resource server functionality to enhance security and access control.
+* Exploration of Identity as a Service (IDaaS) Solutions: Explore services like AWS Cognito to understand their role in providing secure identity management solutions.
 
 ## Features
-This API service document warranties of your products. Users are able to key in their products with the expected warranty expiry date and add details of the companies if technical support is needed. 
+The API service allows users to:
 
-This project has also been deployed onto Railway. Railway is an infrastructure platform similar AWS. Railway was chosen because it provides free tier for hobbyist. 
+* Document warranties for their products, including key details like expected expiry dates and associated company information for technical support.
+* Email reminders for products with warranties that are nearing expiration
 
 
-#### Technologies
-1. Spring Boot
-2. Spring Security
-3. Spring Boot OAuth2 Resource Server
-4. Lombok
-5. Maven
-6. MapStruct
-7. AWS Java SDK for Amazon DynamoDB 
+## Technologies Utilized
+* Spring Boot: Leveraged for efficient API development.
+* Spring Security & OAuth2: Ensures robust security measures for access control.
+* Lombok: Streamlines Java code with annotations, reducing boilerplate code.
+* Maven: Used for project management and build automation.
+* MapStruct: Facilitates mapping between Java bean types.
+* AWS Java SDK for Amazon DynamoDB: Employed for seamless integration with Amazon DynamoDB.
+  
+
 
 ## Running the project
 AWS Access and Secret keys are required and must be set as an environment variable to run this app
@@ -48,4 +51,4 @@ Service on Railway may be down due to limited uptime hours provided.
 
 ## Reflection
 
-This project is similar to the [Subtracker project](https://github.com/649000/subtracker-rest-api) I worked on. In this project, I am using AWS Cognito which is AWS' offering of Identity as a Service. The aim was to familiarise with AWS services which aid in my learning for my AWS certification.
+This project bears resemblance to the [Subtracker project](https://github.com/649000/subtracker-rest-api) I previously worked on. Here, I've integrated AWS Cognito, an Identity as a Service solution offered by AWS. The primary objective was to acquaint myself with AWS services, which play a crucial role in my preparation for the AWS certification.
