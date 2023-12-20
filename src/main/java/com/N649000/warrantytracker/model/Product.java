@@ -34,6 +34,9 @@ public class Product {
     private Date warrantyExpiryDate;
 
     @DynamoDBAttribute
+    private boolean expiryNotification;
+
+    @DynamoDBAttribute
     private String companyId;
 
     @DynamoDBAttribute
