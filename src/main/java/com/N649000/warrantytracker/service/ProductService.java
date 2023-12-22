@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Optional;
 
 @Service
@@ -63,6 +65,15 @@ public class ProductService {
         }
         Product product = mapper.updateProduct(request, optionalProduct.get());
         return productRepository.save(product);
+    }
+
+    public Iterable<Product> getExpiringProducts() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_MONTH, 30);
+        Date thirtyDays = calendar.getTime();
+
+        productRepository.findProductsByWarrantyExpiryDateIsBetween(Calendar.getInstance().getTime(), thirtyDays);
+        return productRepository.findAll();
     }
 
 }
