@@ -42,12 +42,12 @@ mvn spring-boot:run
 ## Endpoints
 |          | localhost                                   | Railway                                                     |
 |----------|---------------------------------------------|-------------------------------------------------------------|
-| Open API | http://localhost:8080/swagger-ui/index.html | https://warranty-tracker-api.up.railway.app/swagger-ui/index.html |
-| Actuator | http://localhost:8080/actuator              | https://warranty-tracker-api.up.railway.app/actuator              |
+| Open API | http://localhost:8080/swagger-ui/index.html | https://warranty-tracker-api.onrender.com/swagger-ui/index.html |
+| Actuator | http://localhost:8080/actuator              | https://warranty-tracker-api.onrender.com/actuator              |
 
 Note that endpoints are secured by Spring Security and require a valid JWT access token to be called. Only the `/actuator` and `/swagger-ui/**` endpoints are not secured. 
 
-Service on Railway may be down due to limited uptime hours provided.
+Service on Render may be down due to limited uptime hours provided.
 
 ## Reflection
 
