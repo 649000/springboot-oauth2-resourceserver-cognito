@@ -47,7 +47,7 @@ mvn spring-boot:run
 
 Note that endpoints are secured by Spring Security and require a valid JWT access token to be called. Only the `/actuator` and `/swagger-ui/**` endpoints are not secured. 
 
-Service on Render may be down due to limited uptime hours provided.
+Service on Render may spin down due to inactivity, resulting in delays of 50 seconds or more for requests.
 
 ## Reflection
 
