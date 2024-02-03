@@ -40,7 +40,7 @@ To run the service, navigate to the root of the project and execute the command
 mvn spring-boot:run
 ```
 ## Endpoints
-|          | localhost                                   | Railway                                                     |
+|          | localhost                                   | Render                                                     |
 |----------|---------------------------------------------|-------------------------------------------------------------|
 | Open API | http://localhost:8080/swagger-ui/index.html | https://warranty-tracker-api.onrender.com/swagger-ui/index.html |
 | Actuator | http://localhost:8080/actuator              | https://warranty-tracker-api.onrender.com/actuator              |
